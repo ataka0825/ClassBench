@@ -6,31 +6,6 @@ http://www.arl.wustl.edu/classbench/
 
 で生成したルールを0, 1, *のルールへ変換するプログラム群
 
-##Usage   
-http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace GeneratorとParameter filesをダウンロードする.     
-コンパイルしたdb_generatorとtrace_generatorにシェルスクリプトのパラメーターを好きなように変えて走らせる.  
-０,１,＊で構成されたルールリストRuleZOMと2進表記のパケットpacket2が生成される.  
-
-$ git clone git@github.com:tanakalab/ClassBench.git  
-$ cd ClassBench  
-$ wget http://www.arl.wustl.edu/classbench/db_generator.tar.gz  
-$ wget http://www.arl.wustl.edu/classbench/trace_generator.tar.gz  
-$ wget http://www.arl.wustl.edu/classbench/parameter_files.tar.gz  
-$ tar xfvz db_generator.tar.gz  
-$ tar xfvz trace_generator.tar.gz  
-$ tar xfvz parameter_files.tar.gz  
-$ cd db_generator  
-$ make all  
-$ cd ../trace_generator  
-$ make all  
-$ cd ..  
-$ cp db_generator/db_generator ./db_generator1   
-& cp trace_generator/trace_generator ./trace_generator1  
-$ gcc -O3 CIDRNotationToZeroOneNotation.c -o ZeroOneMask -lm
-$ gcc -O3 tenTotwo.c -o tenTotwo -lm
-$ cp parameter_files/acl1_seed  ./  
-$ ./addlessRuleAndPacketGenerator.sh
-
 ##目的
 * trace generater で生成したパケットを64ビットの２進表記で表示させる.　     
 例）  
@@ -56,7 +31,30 @@ $ ./addlessRuleAndPacketGenerator.sh
    01＊00111＊0011＊0111＊0＊10＊011001＊010＊00のように加工する.  
 *  評価パケット数を付け加える  　
 
-trace generater で生成した10進表記のパケットを２進表記に直す関数を作成した.
+##Usage   
+http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace GeneratorとParameter filesをダウンロードする.     
+コンパイルしたdb_generatorとtrace_generatorにシェルスクリプトのパラメーターを好きなように変えて走らせる.  
+０,１,＊で構成されたルールリストRuleZOMと2進表記のパケットpacket2が生成される.  
+
+$ git clone git@github.com:tanakalab/ClassBench.git  
+$ cd ClassBench  
+$ wget http://www.arl.wustl.edu/classbench/db_generator.tar.gz  
+$ wget http://www.arl.wustl.edu/classbench/trace_generator.tar.gz  
+$ wget http://www.arl.wustl.edu/classbench/parameter_files.tar.gz  
+$ tar xfvz db_generator.tar.gz  
+$ tar xfvz trace_generator.tar.gz  
+$ tar xfvz parameter_files.tar.gz  
+$ cd db_generator  
+$ make all  
+$ cd ../trace_generator  
+$ make all  
+$ cd ..  
+$ cp db_generator/db_generator ./db_generator1   
+& cp trace_generator/trace_generator ./trace_generator1  
+$ gcc -O3 CIDRNotationToZeroOneNotation.c -o ZeroOneMask -lm
+$ gcc -O3 tenTotwo.c -o tenTotwo -lm
+$ cp parameter_files/acl1_seed  ./  
+$ ./addlessRuleAndPacketGenerator.sh
 
 
 
