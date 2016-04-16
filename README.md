@@ -51,8 +51,8 @@ $ make all
 $ cd ..  
 $ cp db_generator/db_generator ./db_generator1   
 & cp trace_generator/trace_generator ./trace_generator1  
-$ gcc -O3 CIDRNotationToZeroOneNotation.c -o ZeroOneMask -lm
-$ gcc -O3 tenTotwo.c -o tenTotwo -lm
+$ gcc -O3 CIDRNotationToZeroOneNotation.c -o ZeroOneMask -lm  
+$ gcc -O3 tenTotwo.c -o tenTotwo -lm  
 $ cp parameter_files/acl1_seed  ./  
 $ ./addlessRuleAndPacketGenerator.sh
 
