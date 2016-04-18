@@ -37,7 +37,7 @@ http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace Generator
 ０,１,＊で構成されたルールリストRuleZOMと2進表記のパケットpacket2が生成される.  
 
 implementation：  
- ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output filename) (Pareto parameter a) (Pareto parameter b) (scale)  
+ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)
 
 
 
