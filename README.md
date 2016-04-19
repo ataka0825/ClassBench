@@ -39,5 +39,5 @@ http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace Generator
 implementation：  
  $ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)
 
-example:
+example:  
 ./addlessRuleAndPacketGnerator.sh acl1_seed 10000 2 0.5 -0.1 Rule 1 0.1 10 Packet
