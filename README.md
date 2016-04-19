@@ -37,29 +37,6 @@ http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace Generator
 ０,１,＊で構成されたルールリストRuleZOMと2進表記のパケットpacket2が生成される.  
 
 implementation：  
- ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)
-
-
-
-$ git clone git@github.com:tanakalab/ClassBench.git  
-$ cd ClassBench  
-$ wget http://www.arl.wustl.edu/classbench/db_generator.tar.gz  
-$ wget http://www.arl.wustl.edu/classbench/trace_generator.tar.gz  
-$ wget http://www.arl.wustl.edu/classbench/parameter_files.tar.gz  
-$ tar xfvz db_generator.tar.gz  
-$ tar xfvz trace_generator.tar.gz  
-$ tar xfvz parameter_files.tar.gz  
-$ cd db_generator  
-$ make all  
-$ cd ../trace_generator  
-$ make all  
-$ cd ..  
-$ cp db_generator/db_generator ./db_generator1   
-& cp trace_generator/trace_generator ./trace_generator1  
-$ gcc -O3 CIDRNotationToZeroOneNotation.c -o ZeroOneMask -lm  
-$ gcc -O3 tenTotwo.c -o tenTotwo -lm  
-$ cp parameter_files/acl1_seed  ./  
-$ ./addlessRuleAndPacketGenerator.sh
-
+ $ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)
 
 
