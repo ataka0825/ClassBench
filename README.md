@@ -32,7 +32,7 @@ http://www.arl.wustl.edu/classbench/
 *  評価パケット数を付け加える  　
 
 ##Usage   
-コマンド＄git clone git@github.com:tanakalab/ClassBench.gitを実行することで，カレントディレクトリにClassbenchというディレクトリが作成される。  
+コマンド＄git clone git@github.com:tanakalab/ClassBench.gitを実行することで,カレントディレクトリにClassbenchというディレクトリが作成される.  
 作成されたClassbenchというディレクトリに移動する．  
 addlessRuleAndPacketGenerator.shのパラメーターを好きなように変えて走らせる.    
 ０,１,＊で構成されたルールリストと2進表記のパケットが生成される.   
