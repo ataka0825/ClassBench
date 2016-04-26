@@ -41,7 +41,7 @@ addlessRuleAndPacketGenerator.shのパラメーターを好きなように変え
 $ git clone git@github.com:tanakalab/ClassBench.git  
 $ cd ClassBench    
 $ ./compile.sh   
-$ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (probability) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)  
+$ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (probability(0~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)  
 
 ##example:   
 $./addlessRuleAndPacketGnerator.sh acl1_seed 10000 2 0.5 -0.1 Rule 1 0.1 10 Packet  
