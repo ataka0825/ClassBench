@@ -3,15 +3,16 @@
 #include<string.h>
 #include<math.h>
 //#include<time.h>
-
+/*
 char* CIDRToZOM(int* );
 void tenTotwo(int* );
-char* randomZOM(char*,char*);
+*/
+char* createpacket(char*,char*);
 
 int main(int argc,char* argv[])
 {
 
-  int oct[5];
+  char filter[255];
 
 
   FILE *fp;
@@ -22,8 +23,8 @@ int main(int argc,char* argv[])
   }
   //  srand((unsigned int)time(NULL));
   
-  while(fscanf(fp,"%d.%d.%d.%d/%d",&oct[0],&oct[1],&oct[2],&oct[3],&oct[4]) != EOF){
-    printf("%s\n",randomZOM(CIDRToZOM(oct),argv[2]));    
+  while(fscanf(fp,"%s",filter) != EOF){
+    printf("%s\n",createpacket(filter,argv[2]));   
   }
   
    fclose(fp);
@@ -31,6 +32,26 @@ int main(int argc,char* argv[])
   return 0;
 }
 
+
+char* createpacket(char* ZOM,char* pro)
+{
+  int ran,i=0;
+ 
+  while(i<32){
+    ran=(rand()%100)+1; 
+    if(ZOM[i]=='*')
+      ZOM[i]=rand()%2 ? '1' : '0'; 
+    else if(ran<=(atof(pro)*100))
+      ZOM[i]=rand()%2 ? '1' : '0'; 
+    i++;
+  }  
+  
+  return ZOM;
+}
+
+
+
+/*
 char *CIDRToZOM(int* oct)
 {
   static char ZOM[255];
@@ -70,19 +91,4 @@ void  tenTotwo(int* oct)
   }
 }
 
-
-char* randomZOM(char* RZOM,char* pro)
-{
-  int ran,i=0;
- 
-    while(i<32){
-      ran=(rand()%100)+1; 
-      if(RZOM[i]!='*'&&ran<=(atof(pro)*100))
-	RZOM[i]='*';
-      else if(ran<=(/*1-*/atof(pro)*100))
-	RZOM[i]=rand()%2 ? '1' : '0'; 
-      i++;
-    }  
-    
-    return RZOM;
-}
+*/
