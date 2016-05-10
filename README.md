@@ -32,11 +32,16 @@ http://www.arl.wustl.edu/classbench/
 *  評価パケット数を付け加える  　
 
 ##Usage   
-http://www.arl.wustl.edu/classbench からFilter Set GeneratorとTrace GeneratorとParameter filesをダウンロードする.     
-コンパイルしたdb_generatorとtrace_generatorにシェルスクリプトのパラメーターを好きなように変えて走らせる.  
-０,１,＊で構成されたルールリストRuleZOMと2進表記のパケットpacket2が生成される.  
+コマンド＄git clone git@github.com:tanakalab/ClassBench.gitを実行することで,カレントディレクトリにClassbenchというディレクトリが作成される.   
+作成されたClassbenchというディレクトリに移動する．    
+compile.shを実行することで,db_generatorとtrace_generatorを使う準備が整う.      
+addlessRuleAndPacketGenerator.shのパラメーターを好きなように変えて走らせる.      
+０,１,＊で構成されたルールリストと2進表記のパケットが生成される.   
 
-implementation：  
- $ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)
+$ git clone git@github.com:tanakalab/ClassBench.git  
+$ cd ClassBench    
+$ ./compile.sh   
+$ ./addlessRuleAndPacketGenerator.sh  (input parameter file) (number of filters) (smoothness(0~64)) (address scope(-1~1)) (application scope(-1~1)) (probability(0~1)) (output Rule_filename) (Pareto parameter a) (Pareto parameter b) (scale) (output Packet_filename)  
 
-
+##example:   
+$./addlessRuleAndPacketGnerator.sh acl1_seed 10000 2 0.5 -0.1 Rule 1 0.1 10 Packet  
