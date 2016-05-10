@@ -5,14 +5,16 @@
 //#include<time.h>
 
 char* CIDRToZOM(int* );
-void tenTotwo(int* );
 char* randomZOM(char*,char*);
+char* PortToZOM(int*,int*);
+void tenTotwo(int* );
+
 
 int main(int argc,char* argv[])
 {
  
   int s_add[5],d_add[5],s_port[2],d_port[2],protocol[2],matches[2];
-
+  
 
   FILE *fp;
 
@@ -29,13 +31,17 @@ int main(int argc,char* argv[])
   if(fscanf(fp,"@%d.%d.%d.%d/%d\t%d.%d.%d.%d/%d\t%d : %d\t%d : %d\t%x/%x\t%x/%x",&s_add[0],&s_add[1],&s_add[2],&s_add[3],&s_add[4],&d_add[0],&d_add[1],&d_add[2],&d_add[3],&d_add[4],&s_port[0],&s_port[1],&d_port[0],&d_port[1],&protocol[0],&protocol[1],&matches[0],&matches[1]) != EOF){
     printf("@%d.%d.%d.%d/%d %d.%d.%d.%d/%d %d:%d %d:%d %x/%x %x/%x\n",s_add[0],s_add[1],s_add[2],s_add[3],s_add[4],d_add[0],d_add[1],d_add[2],d_add[3],d_add[4],s_port[0],s_port[1],d_port[0],d_port[1],protocol[0],protocol[1],matches[0],matches[1]);
 
-//    printf("%s\n",randomZOM(CIDRToZOM(oct),argv[2]));    
+//    printf("%s\n",randomZOM(CIDRToZOM(oct),argv[2]));
+    PortToZOM();
+
+    
   }
   
    fclose(fp);
 
   return 0;
 }
+
 
 char *CIDRToZOM(int* add)
 {
@@ -58,20 +64,36 @@ char *CIDRToZOM(int* add)
   return ZOM;
 }
 
-void  tenTotwo(int* add)
+
+char* PortToZOM(int* startport,int* endport)
 {
-  unsigned two[8];
+  
+  tenTotwo(startport);
+  tenTotwo(endport);
+  
+  
+
+
+
+
+}
+
+
+
+void  tenTotwo(int* num)
+{
+  unsigned two[32];
   int i = 0;
 
-   while (*add != 0 && *add!= 1) {
-    two[i] = *add%2;
-    *add = *add >> 1;
+   while (*num != 0 && *num!= 1) {
+    two[i] = *num%2;
+    *num = *num >> 1;
     ++i;
   }
-  two[i] = *add;
-  *add = 0;
+  two[i] = *num;
+  *num = 0;
   while(i>=0){
-    *add = *add + two[i]*pow(10,i);
+    *num = *num + two[i]*pow(10,i);
     i--;
   }
 }
